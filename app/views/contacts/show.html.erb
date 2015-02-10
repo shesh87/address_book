@@ -1,11 +1,21 @@
 <h1>Contact <%= @contact.name %> Created</h1>
 
 
+<ul>
+	<li><%= link_to("All Contacts", home_path) %></li>
+	<li><%= link_to("New Contact", add_contacts_path) %></li>
+</ul>
+
+
 <% if flash[:alert] %>
 	<%= flash[:alert] %>
 <% end %>
 
 <ul>
-		<li><%= @contact.name %></li>
-		<li><%= @contact.address %></li>
+	<li><%= @contact.name %></li>
+	<li><%= @contact.address %></li>
+	<li><%= @contact.phone_number %></li>
+	<li><%= @contact.phone_number_alt %></li>
+	<li><%= @contact.email_address %></li>
+	<li><%= @contact.email_address_alt %></li>
 </ul>

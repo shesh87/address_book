@@ -1,5 +1,12 @@
 <h1>Add New Contact</h1>
 
+
+<ul>
+  <li><%= link_to("All Contacts", home_path) %></li>
+  <li><%= link_to("New Contact", add_contacts_path) %></li>
+</ul>
+
+
 <% if flash[:error] %>
 	<ul>
       <% @person.errors.full_messages.each do |error| %>
@@ -7,6 +14,7 @@
       <% end %>
     </ul>
 <% end %>
+
 
 <%= form_for @person do |f| %>
   <%= f.label :name %>:

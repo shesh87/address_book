@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   	def create
   		@person = Contact.new contact_params
   		if @person.save
-  			flash[:alert] = "Contact was not created"
+  			flash[:alert] = "Contact was created"
   			redirect_to(contacts_id_path(@person))
   		else
   			flash[:error] = "Contact was not created"
@@ -26,6 +26,11 @@ class ContactsController < ApplicationController
 
 	def index
 		@contacts = Contact.all
+	end
+
+	def sort
+		@contacts = Contact.order_contacts()
+		render :index
 	end
 
   	private
