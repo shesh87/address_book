@@ -1,0 +1,31 @@
+<h1>Add New Contact</h1>
+
+<% if flash[:error] %>
+	<ul>
+      <% @person.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @person do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :address %>:
+  <%= f.text_field :address %><br />
+
+  <%= f.label :phone_number %>:
+  <%= f.telephone_field :phone_number %><br />
+
+  <%= f.label :phone_number_alt %>:
+  <%= f.telephone_field :phone_number_alt %><br />
+
+  <%= f.label :email_address %>:
+  <%= f.email_field :email_address %><br />
+
+  <%= f.label :email_address_alt %>:
+  <%= f.email_field :email_address_alt %><br />
+
+  <%= f.submit %>
+<% end %>

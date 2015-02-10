@@ -1,0 +1,11 @@
+<h1>Contact <%= @contact.name %> Created</h1>
+
+
+<% if flash[:alert] %>
+	<%= flash[:alert] %>
+<% end %>
+
+<ul>
+		<li><%= @contact.name %></li>
+		<li><%= @contact.address %></li>
+</ul>
