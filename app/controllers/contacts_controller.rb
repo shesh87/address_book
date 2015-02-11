@@ -21,7 +21,17 @@ class ContactsController < ApplicationController
   	end
 
   	def show
-		@contact = Contact.find(params[:id])
+      @contact = Contact.find(params[:id])
+
+		# unless @contact = Contact.find_by(id: params[:id])
+  #     render 'no'
+  #   end
+
+    # if @contact = Contact.find_by(id: params[:id])
+    #   render 'show'
+    # else
+    #   render 'no'
+    # end      
 	end
 
 	def index
@@ -32,6 +42,19 @@ class ContactsController < ApplicationController
 		@contacts = Contact.order_contacts()
 		render :index
 	end
+
+  def sort_letter
+    @letter = params[:letter].slice!(0)
+    @contacts = Contact.all
+    @contact_letter = @contacts.sort_letter(@letter)
+    # redirect_to(letter_sort_path(@letter))
+    render 'sort_letter'
+  end
+
+	# def update
+	# 	@contacts = Contact.order_contacts()
+	# 	render :index
+	# end
 
   	private
 		def contact_params

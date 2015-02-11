@@ -11,8 +11,15 @@ class Contact < ActiveRecord::Base
 	end
 
 	# def self.order_contacts(direction)
-	# 	if direction == ""
-	# 	order(name: :asc)
+	# 	if direction == "asc"
+	# 		order(name: :asc)
+	# 	else
+	# 		order(name: :desc)
+	# 	end
 	# end
+
+	def self.sort_letter(letter)
+		where("name LIKE ?", "#{letter}%")
+	end
 
 end

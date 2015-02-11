@@ -5,7 +5,15 @@
 	<li>Sort By Name</li>
 </ul>
 
-<%= button_to("Sort By Name", contacts_sort_path) %>
+
+<%= button_to("Sort By Name Ascending", contacts_sort_path) %>
+<br>
+
+<% ("A"..."Z").each do |letter| %>
+	<%= link_to(letter, letter_sort_path(letter)) %>
+<% end %>
+
+
 
 
 
@@ -24,3 +32,8 @@
 
 
 
+ <script>
+// 	$('.sort-btn').on('click', function() {
+// 		$.post("sort", "asc");
+// 	});
+</script>
