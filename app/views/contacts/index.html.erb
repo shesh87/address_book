@@ -2,6 +2,7 @@
 
 <ul>
 	<li><%= link_to("New Contact", add_contacts_path) %></li>
+	<li><button class="test">Testing</button></li>
 </ul>
 
 
@@ -16,20 +17,10 @@
 <% @contacts.each do |person| %>
 	<div style="margin-bottom: 10px;">
 		<ul>
-			<li>Name: <%= person.name %></li>
-			<li>Address: <%= person.address %></li>
-			<li>Phone Number: <%= person.phone_number %></li>
-			<li>Alt Phone Number: <%= person.phone_number_alt %></li>
-			<li>Email: <%= person.email_address %></li>
-			<li>Alt Email: <%= person.email_address_alt %></li>
+			<li><%= link_to("#{person.name}", contacts_id_path(person.id)) %></li>
 		</ul>
 	</div>
 <% end %>
 
 
 
- <script>
-// 	$('.sort-btn').on('click', function() {
-// 		$.post("sort", "asc");
-// 	});
-</script>
