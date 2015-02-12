@@ -2,12 +2,8 @@
 
 <ul>
 	<li><%= link_to("New Contact", add_contacts_path) %></li>
-	<li>Sort By Name</li>
 </ul>
 
-
-<%= button_to("Sort By Name Ascending", contacts_sort_path) %>
-<br>
 
 <% ("A"..."Z").each do |letter| %>
 	<%= link_to(letter, letter_sort_path(letter)) %>

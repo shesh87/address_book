@@ -1,0 +1,12 @@
+<% @contacts_letter.each do |person| %>
+	<div style="margin-bottom: 10px;">
+		<ul>
+			<li>Name: <%= person.name %></li>
+			<li>Address: <%= person.address %></li>
+			<li>Phone Number: <%= person.phone_number %></li>
+			<li>Alt Phone Number: <%= person.phone_number_alt %></li>
+			<li>Email: <%= person.email_address %></li>
+			<li>Alt Email: <%= person.email_address_alt %></li>
+		</ul>
+	</div>
+<% end %>
