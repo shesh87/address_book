@@ -32,23 +32,11 @@ $('.ltrs').on('click', function(e) {
 	  url: '/contacts/sort_letter/' + letter,
 	  type: "POST",
 	}).done(function( msg ) {
-		// $('ul.contacts').empty(;
-		// console.log(msg[0]);	
-		// msg.forEach(function(person) {
-		//     console.log(person.name);
-		//     var name = person.name;
-		//     $('.list-container .list-index').html("<li class='letter_list'>"+name+"</li>");
-		// });	
-		// $('.list-index').css("display", "none");
+		$('.list-index').empty();
+		$('.list-index').prepend("<ul class='chosen_ltr'></ul>");
 		msg.forEach(function(person) {
-			// $('').before("<ul class='letter_list'></ul>");
-		    $('ul.contacts').prepend("<li><a href='/contacts/"+person.id+"'>" +person.name+ "</a></li>");
+		    $('.chosen_ltr').append("<li><a href='/contacts/"+person.id+"'>" +person.name+ "</a></li>");
 		});
-		// if ('ul.contacts' != nil) {
-
-		// }
-
-		$('.people').css("display", "none");
 
 	});
 });
