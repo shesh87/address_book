@@ -1,0 +1,31 @@
+h1 {
+	font-size: 48;
+}
+h2 {
+	font-size: 40;
+}
+h3 {
+	font-size: 32;
+}
+h4 {
+	font-size: 24;
+}
+h5 {
+	font-size: 16;
+}
+h6 {
+	font-size: 8;
+}
+a:visited {
+	color: #428bca;
+}
+a:active {
+	color: #428bca;
+}
+a {
+	color: #428bca;
+}
+p {
+	font-size: 16px;
+	color: #000;
+}
