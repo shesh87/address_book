@@ -1,20 +1,27 @@
 h1 {
-	font-size: 48;
+	font-size: 48px;
+	margin-bottom: 20px;
+	font-family: "Georgia", Serif;
 }
 h2 {
-	font-size: 40;
+	font-size: 40px;
+	font-family: "Georgia", Serif;
 }
 h3 {
-	font-size: 32;
+	font-size: 32px;
+	font-family: "Georgia", Serif;
 }
 h4 {
-	font-size: 24;
+	font-size: 24px;
+	font-family: "Georgia", Serif;
 }
 h5 {
-	font-size: 16;
+	font-size: 16px;
+	font-family: "Georgia", Serif;
 }
 h6 {
-	font-size: 8;
+	font-size: 8px;
+	font-family: "Georgia", Serif;
 }
 a:visited {
 	color: #428bca;
@@ -25,7 +32,29 @@ a:active {
 a {
 	color: #428bca;
 }
-p {
+body {
 	font-size: 16px;
 	color: #000;
 }
+
+ul {
+	list-style-type: none;
+}
+.addy-box {
+	margin: 20px auto 0;
+	float: none;
+	border-radius: 10px;
+	background-color: #eee;
+	padding: 5px 15px;
+}
+header {
+	text-align: center;
+}
+
+
+
+
+
+
+
+

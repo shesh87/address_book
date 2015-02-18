@@ -1,36 +1,38 @@
-<header>
-	<h1>My Address Book</h1>
-	
-	<div class="navbar">
-		<ul class="list-inline">
-			<li><%=link_to("New Contact", home_path)%></li>
-			<li><%= link_to("All Contacts", home_path) %></li>
-		</ul>
-
-		<% ("A"..."Z").each do |letter| %>
-			<a href class="ltrs"><%=letter%></a>
-		<% end %>
-	</div>
-</header>
-
-
-
-<main class="col-sm-12">
-	<!--ALPHABET LETTERS-->
-
-	<!--CONTACT LISTING-->
-	<div class="list-container" id="container">
-		<div class="list-index">
-			<ul class="contacts">
-				<% @contacts.each do |person| %>
-						<li class="people" id="people">
-							<%= link_to("#{person.name}", contacts_id_path(person.id)) %>
-						</li>
-				<% end %>
+<div class="addy-box col-sm-6">
+	<header>
+		<h1>My Address Book</h1>
+		
+		<div class="navbar">
+			<ul class="list-inline">
+				<li><%=link_to("New Contact", home_path)%></li>
+				<li><%= link_to("All Contacts", home_path) %></li>
 			</ul>
-		<div>
-	</div>
-</main>
 
-<footer class="col-sm-12"></footer>
+			<% ("A"..."Z").each do |letter| %>
+				<a href class="ltrs"><%=letter%></a>
+			<% end %>
+		</div>
+	</header>
+
+
+
+	<main>
+		<!--ALPHABET LETTERS-->
+
+		<!--CONTACT LISTING-->
+		<div class="list-container" id="container">
+			<div class="list-index">
+				<ul class="contacts">
+					<% @contacts.each do |person| %>
+							<li class="people" id="people">
+								<%= link_to("#{person.name}", contacts_id_path(person.id)) %>
+							</li>
+					<% end %>
+				</ul>
+			<div>
+		</div>
+	</main>
+
+	<footer class="col-sm-12"></footer>
+</div>
 
