@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'contacts/:id' => 'contacts#show', as: 'contacts_id'
 
-  get '/contacts/sort_letter/:letter' => 'contacts#sort_letter', as: 'letter_sort'
+  post '/contacts/sort_letter/:letter' => 'contacts#sort_letter', as: 'letter_sort'
 
+
+  # get '/contacts/sort_letter/:letter' => 'contacts#sort_letter', as: 'letter_sort'
 end

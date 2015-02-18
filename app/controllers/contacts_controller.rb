@@ -25,16 +25,15 @@ class ContactsController < ApplicationController
 	end
 
 	def index
-		@contacts = Contact.all
+		@contacts = Contact.all.order(name: :asc)
 	end
 
 
   def sort_letter
-    @letter = params[:letter].slice!(0)
+    @letter = params[:letter]#.slice!(0)
     @contacts = Contact.all
     @contacts_letter = @contacts.sort_letter(@letter)
-    # redirect_to(letter_sort_path(@letter))
-    render 'sort_letter'
+    render json: @contacts_letter #'sort_letter'
   end
 
 

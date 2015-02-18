@@ -1,26 +1,26 @@
 <h1>My Address Book</h1>
 
-<ul>
-	<li><%= link_to("New Contact", add_contacts_path) %></li>
-	<li><button class="test">Testing</button></li>
-</ul>
+<%=link_to("Add Contact", home_path)%>
 
 
-<% ("A"..."Z").each do |letter| %>
-	<%= link_to(letter, letter_sort_path(letter)) %>
-<% end %>
-
-
+<div style="margin-bottom: 20px;">
+	<% ("A"..."Z").each do |letter| %>
+		<a href class="ltrs"><%=letter%></a>
+	<% end %>
+</div>
 
 
 
-<% @contacts.each do |person| %>
-	<div style="margin-bottom: 10px;">
-		<ul>
-			<li><%= link_to("#{person.name}", contacts_id_path(person.id)) %></li>
-		</ul>
-	</div>
-<% end %>
-
+<div class="list-container" id="container">
+	<div class="list-index">
+		<% @contacts.each do |person| %>
+			<ul>
+				<li class="people" id="people">
+					<%= link_to("#{person.name}", contacts_id_path(person.id)) %>
+				</li>
+			</ul>
+		<% end %>
+	<div>
+</div>
 
 
