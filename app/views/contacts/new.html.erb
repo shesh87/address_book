@@ -1,39 +1,50 @@
-<h1>Add New Contact</h1>
+<div class="addy-box col-sm-7">
+
+  <header>
+    <h1>Add New Contact</h1>
+
+    <div class="navbar">
+      <ul class="list-inline">
+        <li><h4><%=link_to("New Contact", add_contacts_path)%></h4></li>
+        <li><h4><%= link_to("All Contacts", home_path) %></h4></li>
+      </ul>
+    </div>
+  </header>
 
 
-<ul>
-  <li><%= link_to("All Contacts", home_path) %></li>
-  <li><%= link_to("New Contact", add_contacts_path) %></li>
-</ul>
+  <main>
+    <% if flash[:error] %>
+    	<ul>
+          <% @person.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+    <% end %>
 
+    <!--NEW CONTACT FORM-->
+    <%= form_for @person do |f| %>
+      <%= f.label :name %>:
+      <%= f.text_field :name %><br />
 
-<% if flash[:error] %>
-	<ul>
-      <% @person.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-<% end %>
+      <%= f.label :address %>:
+      <%= f.text_field :address %><br />
 
+      <%= f.label :phone_number %>:
+      <%= f.telephone_field :phone_number %><br />
 
-<%= form_for @person do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
+      <%= f.label :phone_number_alt %>:
+      <%= f.telephone_field :phone_number_alt %><br />
 
-  <%= f.label :address %>:
-  <%= f.text_field :address %><br />
+      <%= f.label :email_address %>:
+      <%= f.email_field :email_address %><br />
 
-  <%= f.label :phone_number %>:
-  <%= f.telephone_field :phone_number %><br />
+      <%= f.label :email_address_alt %>:
+      <%= f.email_field :email_address_alt %><br />
 
-  <%= f.label :phone_number_alt %>:
-  <%= f.telephone_field :phone_number_alt %><br />
+      <span class="btn-default btn"><%= f.submit %></span>
+    <% end %>
+  </main>
 
-  <%= f.label :email_address %>:
-  <%= f.email_field :email_address %><br />
+  <footer class="col-sm-12"></footer>
 
-  <%= f.label :email_address_alt %>:
-  <%= f.email_field :email_address_alt %><br />
-
-  <%= f.submit %>
-<% end %>
+</div>

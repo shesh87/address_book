@@ -1,15 +1,15 @@
-<div class="addy-box col-sm-6">
+<div class="addy-box col-sm-7">
 	<header>
 		<h1>My Address Book</h1>
 		
 		<div class="navbar">
 			<ul class="list-inline">
-				<li><%=link_to("New Contact", home_path)%></li>
-				<li><%= link_to("All Contacts", home_path) %></li>
+				<li><h4><%=link_to("New Contact", add_contacts_path)%></h4></li>
+				<li><h4><%= link_to("All Contacts", home_path) %></h4></li>
 			</ul>
-
+			<!--ALPHABET LETTERS-->
 			<% ("A"..."Z").each do |letter| %>
-				<a href class="ltrs"><%=letter%></a>
+				<a href class="js-ltrs letter-btns btn-default btn"><%=letter%></a>
 			<% end %>
 		</div>
 	</header>
@@ -17,12 +17,11 @@
 
 
 	<main>
-		<!--ALPHABET LETTERS-->
-
+	<frame style="width: 300px; height:">
 		<!--CONTACT LISTING-->
 		<div class="list-container" id="container">
 			<div class="list-index">
-				<ul class="contacts">
+				<ul class="contacts js-contacts">
 					<% @contacts.each do |person| %>
 							<li class="people" id="people">
 								<%= link_to("#{person.name}", contacts_id_path(person.id)) %>
@@ -31,6 +30,7 @@
 				</ul>
 			<div>
 		</div>
+		</frame>
 	</main>
 
 	<footer class="col-sm-12"></footer>

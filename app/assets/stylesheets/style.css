@@ -1,3 +1,8 @@
+body {
+	font-size: 18px;
+	color: #333;
+	background-color: #eee;
+}
 h1 {
 	font-size: 48px;
 	margin-bottom: 20px;
@@ -24,19 +29,14 @@ h6 {
 	font-family: "Georgia", Serif;
 }
 a:visited {
-	color: #428bca;
+	color: #333;
 }
 a:active {
-	color: #428bca;
+	color: #33;
 }
 a {
-	color: #428bca;
+	color: #333;
 }
-body {
-	font-size: 16px;
-	color: #000;
-}
-
 ul {
 	list-style-type: none;
 }
@@ -44,13 +44,19 @@ ul {
 	margin: 20px auto 0;
 	float: none;
 	border-radius: 10px;
-	background-color: #eee;
+	background-color: #BD8D46;
 	padding: 5px 15px;
 }
 header {
 	text-align: center;
 }
-
+.letter-btns {
+	padding: 0px 6px;
+	font-size: 18px;
+}
+li.people {
+	margin-bottom: 10px;
+}
 
 
 
